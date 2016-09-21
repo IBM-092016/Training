@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+	function sendToServer(btnName){
+		var data = {};
+		data[btnName] = "Item Clicked";
+		
+		$.post( "/CoreJavaLabWeb/ChangeShoppingCart", data);
+		
+	}
+	
+</script>
+</head>
+<body>
+	<FORM id="testform" ACTION="/CoreJavaLabWeb/ChangeShoppingCart" align="CENTER">
+	  <table>
+	  	<thead>
+	  		<tr><th colspan="3">Java Books</th></tr>
+	  		<tr><th>Item Name</th></tr>
+	  	</thead>
+	  	<tr><td>Head first Java</td><td>
+	  	<input type="button" name="btnAdd1" value="Add Item" onclick="sendToServer('btnAdd1')"></td>
+	  	<td>
+	  	<input type="button" name="btnDel1" value="Remove" onclick="sendToServer('btnDel1')"></td></tr>
+	  	<tr><td>Effective Java</td><td>
+	  	<input type="button" name="btnAdd2" value="Add Item" onclick="sendToServer('btnAdd2')"></td>
+	  	<td>
+	  	<input type="button" name="btnDel2" value="Remove" onclick="sendToServer('btnDel2')"></td></tr>
+	  	<tr><td>Thinking in Java</td><td>
+	  	<input type="button" name="btnAdd3" value="Add Item" onclick="sendToServer('btnAdd3')"></td>
+	  	<td>
+	  	<input type="button" name="btnDel3" value="Remove" onclick="sendToServer('btnDel3')"></td></tr>
+	  </table>
+	</FORM>
+	<br>
+	<FORM ACTION="/CoreJavaLabWeb/DisplayShoppingCart" align="CENTER">
+		<input type="submit" name="btnDisplay" value="Display Items">
+	</FORM>	
+</body>
+</html>
