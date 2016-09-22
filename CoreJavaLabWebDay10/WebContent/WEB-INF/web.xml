@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>CoreJavaLabWebDay9</display-name>
+  <welcome-file-list>
+    <welcome-file>content.html</welcome-file>
+  </welcome-file-list>
+  <listener>
+    <listener-class>day10.module2.DBSetupListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>ListEmployees</display-name>
+    <servlet-name>ListEmployees</servlet-name>
+    <servlet-class>day10.module2.ListEmployees</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListEmployees</servlet-name>
+    <url-pattern>/ListEmployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteEmployee</display-name>
+    <servlet-name>DeleteEmployee</servlet-name>
+    <servlet-class>day10.module2.DeleteEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteEmployee</servlet-name>
+    <url-pattern>/DeleteEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateEmployee</display-name>
+    <servlet-name>CreateEmployee</servlet-name>
+    <servlet-class>day10.module2.CreateEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateEmployee</servlet-name>
+    <url-pattern>/CreateEmployee</url-pattern>
+  </servlet-mapping>
+</web-app>
