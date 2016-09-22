@@ -4,6 +4,16 @@
   <welcome-file-list>
     <welcome-file>content.html</welcome-file>
   </welcome-file-list>
+  <resource-ref>
+    <description>
+		   Resource reference to a factory for java.sql.Connection
+		   instances that may be used for talking to a particular
+		   database that is configured in the configuration for the web application.
+  		</description>
+    <res-ref-name>jdbc/MyDB</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
   <listener>
     <listener-class>day10.module2.DBSetupListener</listener-class>
   </listener>
@@ -36,5 +46,15 @@
   <servlet-mapping>
     <servlet-name>CreateEmployee</servlet-name>
     <url-pattern>/CreateEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateEmployee</display-name>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <servlet-class>day10.module2.UpdateEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <url-pattern>/UpdateEmployee</url-pattern>
   </servlet-mapping>
 </web-app>

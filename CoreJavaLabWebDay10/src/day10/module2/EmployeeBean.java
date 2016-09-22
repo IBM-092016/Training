@@ -3,6 +3,10 @@ package day10.module2;
 import java.io.Serializable;
 
 public class EmployeeBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int mId;
 	private String mName;
 	private int mAge;

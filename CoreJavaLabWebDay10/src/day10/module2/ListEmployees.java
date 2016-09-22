@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +42,9 @@ public class ListEmployees extends HttpServlet {
     		pstmt.close();
     		conn.close();
     		
-    		//System.out.println(request.getParameter("action"));
+    		//System.out.println("action: " + request.getParameter("action"));
     		
-    		request.setAttribute("action",request.getParameter("action").equalsIgnoreCase("delete"));
+    		request.setAttribute("action",request.getParameter("action"));
     		request.setAttribute("employees", employees);
     		request.getRequestDispatcher("showEmployees.jsp").forward(request, response);
     	} catch(Exception ex) {

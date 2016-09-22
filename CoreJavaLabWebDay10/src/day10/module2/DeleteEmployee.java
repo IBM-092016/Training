@@ -3,7 +3,6 @@ package day10.module2;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -45,7 +44,7 @@ public class DeleteEmployee extends HttpServlet {
 			throws ServletException, IOException {
 		// doGet(request, response);
 		try {
-			System.out.println(request.getParameter("empID"));
+			//System.out.println(request.getParameter("empID"));
 
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context) initCtx.lookup("java:comp/env");
@@ -55,7 +54,7 @@ public class DeleteEmployee extends HttpServlet {
 			PreparedStatement pstmt = conn.prepareStatement("DELETE FROM employees WHERE id = ?");
 			String param = request.getParameter("empID");
 			pstmt.setInt(1, Integer.parseInt(param));
-			int nrOfRows = pstmt.executeUpdate();
+			pstmt.executeUpdate();
 			pstmt.close();
 			conn.close();
 			request.getRequestDispatcher("content.html").forward(request, response);
